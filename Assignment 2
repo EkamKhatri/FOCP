@@ -1,0 +1,511 @@
+1.
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    int marks[n]; 
+    printf("Enter the marks of %d students:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        marks[i] += 5;
+    }
+    printf("\nUpdated marks of students after adding 5:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Student %d: %d\n", i + 1, marks[i]);
+    }
+    return 0;
+}
+
+2.
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    int marks[n]; 
+    printf("Enter the marks of %d students:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    printf("\nGrades of students based on marks:\n");
+    for (int i = 0; i < n; i++) {
+        if (marks[i] >= 75) {
+            printf("Student %d: A Grade\n", i + 1);
+        } else if (marks[i] >= 60) {
+            printf("Student %d: B Grade\n", i + 1);
+        } else if (marks[i] >= 40) {
+            printf("Student %d: C Grade\n", i + 1);
+        } else {
+            printf("Student %d: D Grade\n", i + 1);
+        }
+    }
+    return 0;
+}
+
+3.
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    int marks[n]; 
+    printf("Enter the marks of %d students:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    int found = 0;
+    for (int i = 0; i < n; i++) {
+        if (marks[i] == 99) {
+            printf("Student %d scored 99 marks first.\n", i + 1);
+            found = 1;
+            break; 
+        }
+    }
+    if (!found) {
+        printf("No student scored 99 marks.\n");
+    }
+    return 0;
+}
+
+4.
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    int marks[n]; 
+    printf("Enter the marks of %d students:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    int count = 0; 
+    printf("\nStudents who scored 99 marks:\n");
+    for (int i = 0; i < n; i++) {
+        if (marks[i] == 99) {
+            printf("Student %d scored 99 marks.\n", i + 1);
+            count++; 
+        }
+    }
+    if (count == 0) {
+        printf("No student scored 99 marks.\n");
+    } else {
+        printf("\nTotal number of students who scored 99 marks: %d\n", count);
+    }
+    return 0;
+}
+
+5.
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    int marks[n]; 
+    int sum = 0;  
+    printf("Enter the marks of %d students:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        sum += marks[i];
+    }
+    printf("\nThe sum of all scores is: %d\n", sum);
+    return 0;
+}
+
+6.
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    int marks[n]; 
+    int sum = 0;  
+    printf("Enter the marks of %d students:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        sum += marks[i]; 
+    }
+    float average = (float)sum / n;
+    printf("\nThe average score of the students is: %.2f\n", average);
+    return 0;
+}
+
+7.
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    int marks[n]; 
+    printf("Enter the marks of %d students:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    printf("\nChecking whether scores are even or odd:\n");
+    for (int i = 0; i < n; i++) {
+        if (marks[i] % 2 == 0) {
+            printf("Student %d's score %d is Even.\n", i + 1, marks[i]);
+        } else {
+            printf("Student %d's score %d is Odd.\n", i + 1, marks[i]);
+        }
+    }
+    return 0;
+}
+
+8.
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    int marks[n]; 
+    printf("Enter the marks of %d students:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    int max = marks[0];
+    int min = marks[0];
+    for (int i = 1; i < n; i++) {
+        if (marks[i] > max) {
+            max = marks[i]; 
+        }
+        if (marks[i] < min) {
+            min = marks[i];
+        }
+    }
+    printf("\nThe maximum score is: %d\n", max);
+    printf("The minimum score is: %d\n", min);
+
+    return 0;
+}
+
+9.
+#include <stdio.h>
+int findPeak(int arr[], int n) {
+    if (arr[0] >= arr[1]) {
+        return 0;
+    }
+    if (arr[n-1] >= arr[n-2]) {
+        return n-1; 
+    }
+    for (int i = 1; i < n-1; i++) {
+        if (arr[i] >= arr[i-1] && arr[i] >= arr[i+1]) {
+            return i; 
+        }
+    }
+    return -1; 
+}
+int main() {
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n]; 
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    int peakIndex = findPeak(arr, n);
+    if (peakIndex != -1) {
+        printf("Peak element is %d at index %d\n", arr[peakIndex], peakIndex);
+    } else {
+        printf("No peak element found.\n");
+    }
+    return 0;
+}#include <stdio.h>
+int findPeak(int arr[], int n) {
+    if (arr[0] >= arr[1]) {
+        return 0;
+    }
+    if (arr[n-1] >= arr[n-2]) {
+        return n-1; 
+    }
+    for (int i = 1; i < n-1; i++) {
+        if (arr[i] >= arr[i-1] && arr[i] >= arr[i+1]) {
+            return i; 
+        }
+    }
+    return -1; 
+}
+int main() {
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n]; 
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    int peakIndex = findPeak(arr, n);
+    if (peakIndex != -1) {
+        printf("Peak element is %d at index %d\n", arr[peakIndex], peakIndex);
+    } else {
+        printf("No peak element found.\n");
+    }
+    return 0;
+}
+
+10.
+#include <stdio.h>
+#include <stdbool.h>
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false; 
+    }
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return false; 
+        }
+    }
+    return true;  
+}
+int main() {
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n]; 
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    int primeCount = 0;
+    for (int i = 0; i < n; i++) {
+        if (isPrime(arr[i])) {
+            primeCount++;
+        }
+    }
+    printf("\nThe number of prime numbers in the array is: %d\n", primeCount);
+    return 0;
+}
+
+11.
+#include <stdio.h>
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+void insertAtFront(int arr[], int *n, int value) {
+    for (int i = *n; i > 0; i--) {
+        arr[i] = arr[i - 1];
+    }
+    arr[0] = value;  
+    (*n)++;  
+}
+void insertAtPosition(int arr[], int *n, int value, int position) {
+    if (position > *n) {
+        printf("Invalid position!\n");
+        return;
+    }
+    for (int i = *n; i > position; i--) {
+        arr[i] = arr[i - 1];
+    }
+    arr[position] = value; 
+    (*n)++;  
+}
+void insertAtEnd(int arr[], int *n, int value) {
+    arr[*n] = value; 
+    (*n)++;  
+}
+int main() {
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n + 1];  
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    printf("\nArray before insertion:\n");
+    printArray(arr, n);
+
+    int choice, value, position;
+    printf("\nChoose insertion option:\n");
+    printf("1. Insert at front\n");
+    printf("2. Insert at a specific position\n");
+    printf("3. Insert at the end\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+    switch(choice) {
+        case 1:
+            printf("Enter the value to insert at the front: ");
+            scanf("%d", &value);
+            insertAtFront(arr, &n, value);
+            break;
+        case 2:
+            printf("Enter the value to insert: ");
+            scanf("%d", &value);
+            printf("Enter the position (0 to %d): ", n);
+            scanf("%d", &position);
+            insertAtPosition(arr, &n, value, position);
+            break;
+        case 3:
+            printf("Enter the value to insert at the end: ");
+            scanf("%d", &value);
+            insertAtEnd(arr, &n, value);
+            break;
+        default:
+            printf("Invalid choice!\n");
+            return 0;
+    }
+    printf("\nArray after insertion:\n");
+    printArray(arr, n);
+    return 0;
+}
+
+12.
+#include <stdio.h>
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+void deleteAtFront(int arr[], int *n) {
+    for (int i = 0; i < *n - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    (*n)--;  
+}
+void deleteAtPosition(int arr[], int *n, int position) {
+    if (position < 0 || position >= *n) {
+        printf("Invalid position!\n");
+        return;
+    }
+    for (int i = position; i < *n - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    (*n)--; 
+}
+void deleteAtEnd(int arr[], int *n) {
+    (*n)--;  
+}
+int main() {
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n]; 
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    printf("\nArray before deletion:\n");
+    printArray(arr, n);
+    int choice, position;
+    printf("\nChoose deletion option:\n");
+    printf("1. Delete at front\n");
+    printf("2. Delete at a specific position\n");
+    printf("3. Delete at the end\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+    switch(choice) {
+        case 1:
+            deleteAtFront(arr, &n);
+            break;
+        case 2:
+            printf("Enter the position (0 to %d): ", n - 1);
+            scanf("%d", &position);
+            deleteAtPosition(arr, &n, position);
+            break;
+        case 3:
+            deleteAtEnd(arr, &n);
+            break;
+        default:
+            printf("Invalid choice!\n");
+            return 0;
+    }
+    printf("\nArray after deletion:\n");
+    printArray(arr, n);
+    return 0;
+}
+
+13.
+#include <stdio.h>
+void rotateArray(int arr[], int n) {
+    int last = arr[n - 1];
+    for (int i = n - 1; i > 0; i--) {
+        arr[i] = arr[i - 1];
+    }
+    arr[0] = last;
+}
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+int main() {
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n];  
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    printf("\nArray before rotation:\n");
+    printArray(arr, n);
+    rotateArray(arr, n);
+    printf("\nArray after rotation:\n");
+    printArray(arr, n);
+    return 0;
+}
+
+14.
+#include <stdio.h>
+void printDuplicates(int arr[], int n) {
+    int foundDuplicate = 0;  
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == -1) {
+            continue;
+        }
+        int isDuplicate = 0;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] == arr[j]) {
+                isDuplicate = 1;
+                arr[j] = -1;
+            }
+        }
+        if (isDuplicate) {
+            printf("%d ", arr[i]);
+            foundDuplicate = 1; 
+        }
+    }
+    if (!foundDuplicate) {
+        printf("-1\n");
+    }
+}
+int main() {
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n]; 
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    printf("\nDuplicates in the array are: ");
+    printDuplicates(arr, n);
+    return 0;
+}
